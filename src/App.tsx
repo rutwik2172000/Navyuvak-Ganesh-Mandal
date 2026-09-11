@@ -135,10 +135,13 @@ function App() {
   useEffect(() => {
     const onScroll = () => {
       const ids = ["home", "about", "festival", "events", "seva", "contact"]
-      const current = ids.findLast((id) => {
-        const el = document.getElementById(id)
-        return el && window.scrollY >= el.offsetTop - 180
-      })
+      const current = [...ids].reverse().find((id: string) => {
+  const el = document.getElementById(id)
+  if (!el) return false
+
+  const rect = el.getBoundingClientRect()
+  return rect.top <= 180
+})
       if (current) setActive(current)
     }
     window.addEventListener("scroll", onScroll, { passive: true })
