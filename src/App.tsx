@@ -7,10 +7,8 @@ import {
   Landmark,
   Menu,
   MapPin,
-  MessageCircle,
   Music2,
   Phone,
-  Play,
   Sparkles,
   Star,
   Users,
@@ -22,17 +20,18 @@ type Language = 'mr' | 'hi' | 'en'
 const content = {
   mr: {
     nav: ['मुख्यपृष्ठ', 'आमच्याबद्दल', 'उत्सव', 'कार्यक्रम', 'सेवा', 'संपर्क'],
+    mandalName: 'नवयुवक गणेश मंडळ मांडवा',
     heroKicker: 'श्री गणेशाच्या चरणी सेवा • संस्कृती • एकता',
     heroTitle: 'गणपती बाप्पा मोरया!',
     heroText:
-      'नवयुवक गणेश मंडळात आपले मनःपूर्वक स्वागत. भक्ती, संस्कृती आणि समाजसेवेचा उत्सव एकत्र साजरा करूया.',
+      'नवयुवक गणेश मंडळ मांडवा मध्ये आपले मनःपूर्वक स्वागत. भक्ती, संस्कृती आणि समाजसेवेचा उत्सव एकत्र साजरा करूया.',
     primary: 'उत्सवाची माहिती',
     secondary: 'मंडळाबद्दल जाणून घ्या',
     stats: ['वर्षांची परंपरा', 'स्वयंसेवक'],
     aboutEyebrow: 'आमची ओळख',
     aboutTitle: 'भक्तीपासून समाजसेवेपर्यंतचा प्रवास',
     aboutText:
-      'नवयुवक गणेश मंडळ हे केवळ उत्सवाचे व्यासपीठ नाही; हे परिसरातील लोकांना एकत्र आणणारे, संस्कृती जपणारे आणि समाजासाठी सकारात्मक काम करणारे कुटुंब आहे.',
+      'नवयुवक गणेश मंडळ मांडवा हे केवळ उत्सवाचे व्यासपीठ नाही; हे परिसरातील लोकांना एकत्र आणणारे, संस्कृती जपणारे आणि समाजासाठी सकारात्मक काम करणारे कुटुंब आहे.',
     values: [
       'भक्ती आणि परंपरा',
       'युवा सहभाग',
@@ -64,17 +63,18 @@ const content = {
   },
   hi: {
     nav: ['मुख्य', 'हमारे बारे में', 'उत्सव', 'कार्यक्रम', 'सेवा', 'संपर्क'],
+    mandalName: 'नवयुवक गणेश मंडल मांडवा',
     heroKicker: 'श्री गणेश के चरणों में सेवा • संस्कृति • एकता',
     heroTitle: 'गणपति बप्पा मोरया!',
     heroText:
-      'नवयुवक गणेश मंडल में आपका हार्दिक स्वागत है। आइए भक्ति, संस्कृति और समाजसेवा का उत्सव साथ मनाएं।',
+      'नवयुवक गणेश मंडल मांडवा में आपका हार्दिक स्वागत है। आइए भक्ति, संस्कृति और समाजसेवा का उत्सव साथ मनाएं।',
     primary: 'उत्सव की जानकारी',
     secondary: 'मंडल के बारे में',
     stats: ['वर्षों की परंपरा', 'स्वयंसेवक'],
     aboutEyebrow: 'हमारी पहचान',
     aboutTitle: 'भक्ति से समाजसेवा तक का सफर',
     aboutText:
-      'नवयुवक गणेश मंडल केवल उत्सव का मंच नहीं, बल्कि लोगों को जोड़ने, संस्कृति को संजोने और समाज के लिए सकारात्मक कार्य करने वाला परिवार है।',
+      'नवयुवक गणेश मंडल मांडवा केवल उत्सव का मंच नहीं, बल्कि लोगों को जोड़ने, संस्कृति को संजोने और समाज के लिए सकारात्मक कार्य करने वाला परिवार है।',
     values: [
       'भक्ति और परंपरा',
       'युवा सहभागिता',
@@ -106,17 +106,18 @@ const content = {
   },
   en: {
     nav: ['Home', 'About', 'Festival', 'Events', 'Seva', 'Contact'],
+    mandalName: 'Navyuvak Ganesh Mandal Mandwa',
     heroKicker: 'Devotion • Culture • Community',
     heroTitle: 'Ganpati Bappa Morya!',
     heroText:
-      'Welcome to Navyuvak Ganesh Mandal — a community brought together by devotion, culture, service and the spirit of togetherness.',
+      'Welcome to Navyuvak Ganesh Mandal Mandwa — a community brought together by devotion, culture, service and the spirit of togetherness.',
     primary: 'Explore the festival',
     secondary: 'Discover our mandal',
     stats: ['Years of tradition', 'Volunteers'],
     aboutEyebrow: 'Who we are',
     aboutTitle: 'A celebration rooted in devotion and service',
     aboutText:
-      'Navyuvak Ganesh Mandal is more than a festival committee. We are a community family preserving culture, bringing people together and creating meaningful social impact.',
+      'Navyuvak Ganesh Mandal Mandwa is more than a festival committee. We are a community family preserving culture, bringing people together and creating meaningful social impact.',
     values: [
       'Devotion & tradition',
       'Youth participation',
@@ -196,9 +197,7 @@ function App () {
       const current = [...ids].reverse().find((id: string) => {
         const el = document.getElementById(id)
         if (!el) return false
-
-        const rect = el.getBoundingClientRect()
-        return rect.top <= 180
+        return el.getBoundingClientRect().top <= 180
       })
       if (current) setActive(current)
     }
@@ -215,15 +214,15 @@ function App () {
           <a href='#home' className='flex items-center gap-3'>
             <img
               src='/logo.png'
-              alt='Navyuvak Ganesh Mandal logo'
+              alt={t.mandalName}
               className='h-14 w-14 rounded-full object-cover ring-1 ring-[#d49a32]/40'
             />
             <div className='hidden sm:block'>
               <p className='font-serif text-lg font-bold tracking-wide text-[#f7d48b]'>
-                नवयुवक गणेश मंडळ
+                {t.mandalName}
               </p>
               <p className='text-[10px] uppercase tracking-[0.3em] text-white/45'>
-                Navyuvak Ganesh Mandal
+                Navyuvak Ganesh Mandal Mandwa
               </p>
             </div>
           </a>
@@ -315,8 +314,7 @@ function App () {
           <div className='relative mx-auto grid w-full max-w-7xl items-center gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[1.05fr_.95fr]'>
             <div className='max-w-2xl'>
               <div className='mb-7 inline-flex items-center gap-2 rounded-full border border-[#d49a32]/25 bg-[#d49a32]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#f3c978]'>
-                <Sparkles size={14} />
-                {t.heroKicker}
+                <Sparkles size={14} /> {t.heroKicker}
               </div>
               <h1 className='font-serif text-6xl font-black leading-[.95] tracking-tight sm:text-7xl lg:text-8xl'>
                 <span className='text-white'>गणपती</span>
@@ -364,14 +362,14 @@ function App () {
                 <div className='rounded-[1.5rem] border border-white/10 bg-[#100b09] p-3'>
                   <img
                     src='/logo.png'
-                    alt='Navyuvak Ganesh Mandal'
+                    alt={t.mandalName}
                     className='mx-auto aspect-square w-full rounded-[1.15rem] object-cover'
                   />
                 </div>
                 <div className='flex items-center justify-between px-3 pb-2 pt-4'>
                   <div>
                     <p className='text-xs uppercase tracking-[.25em] text-white/40'>
-                      Navyuvak Ganesh
+                      Navyuvak Ganesh Mandal
                     </p>
                     <p className='mt-1 font-serif text-lg text-[#f7d48b]'>
                       भक्ती • संस्कृती • सेवा
@@ -464,16 +462,11 @@ function App () {
                 <h2 className='section-title mt-4 max-w-3xl'>
                   {t.festivalTitle}
                 </h2>
-                <p className='mt-6 max-w-2xl text-white/55 leading-8'>
+                <p className='mt-6 max-w-2xl leading-8 text-white/55'>
                   {t.festivalText}
                 </p>
                 <div className='mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4'>
-                  {[
-                    ['19', 'SEP'],
-                    ['20', 'SEP'],
-                    ['21', 'SEP'],
-                    ['22', 'SEP']
-                  ].map(([d, m]) => (
+                  {['19', '20', '21', '22'].map(d => (
                     <div
                       key={d}
                       className='rounded-2xl border border-white/10 bg-black/20 p-4'
@@ -482,7 +475,7 @@ function App () {
                         {d}
                       </p>
                       <p className='text-[10px] font-bold tracking-[.25em] text-white/35'>
-                        {m}
+                        SEP
                       </p>
                     </div>
                   ))}
@@ -635,7 +628,6 @@ function App () {
                     <small>Call the mandal</small>
                   </span>
                 </a>
-
                 <a href='tel:+919022500433' className='contact-card'>
                   <Phone size={18} />
                   <span>
@@ -643,7 +635,6 @@ function App () {
                     <small>Call the mandal</small>
                   </span>
                 </a>
-
                 <div className='contact-card'>
                   <MapPin size={18} />
                   <span>
@@ -651,7 +642,6 @@ function App () {
                     <small>Mandal location</small>
                   </span>
                 </div>
-
                 <div className='contact-card'>
                   <Clock3 size={18} />
                   <span>
@@ -666,11 +656,11 @@ function App () {
                 <img
                   src='/logo.png'
                   className='h-14 w-14 rounded-full object-cover'
-                  alt='Mandal logo'
+                  alt={t.mandalName}
                 />
                 <div>
                   <p className='font-serif text-xl text-[#f5d184]'>
-                    नवयुवक गणेश मंडळ
+                    {t.mandalName}
                   </p>
                   <p className='text-xs text-white/35'>
                     Mandwa • Chandur Rly • Amravati
@@ -716,11 +706,11 @@ function App () {
             <img
               src='/logo.png'
               className='h-10 w-10 rounded-full object-cover'
-              alt='Mandal logo'
+              alt={t.mandalName}
             />
             <div>
               <p className='text-sm font-semibold text-white/80'>
-                नवयुवक गणेश मंडळ
+                {t.mandalName}
               </p>
               <p className='text-[10px] uppercase tracking-[.2em] text-white/30'>
                 {t.footer}
@@ -728,7 +718,7 @@ function App () {
             </div>
           </div>
           <p className='text-xs text-white/30'>
-            © 2026 Navyuvak Ganesh Mandal. All rights reserved.
+            © 2026 Navyuvak Ganesh Mandal Mandwa. All rights reserved.
           </p>
         </div>
       </footer>
