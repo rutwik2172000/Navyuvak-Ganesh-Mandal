@@ -403,7 +403,7 @@ function App() {
               <p className="mt-5 max-w-xl leading-8 text-white/50">{t.contactText}</p>
               <div className="mt-10 grid gap-3 sm:grid-cols-2">
                 <a href="tel:+917517726476" className="contact-card"><Phone size={18}/><span><b>7517726476</b><small>Call the mandal</small></span></a>
-                <a href="tel:+919022500433" className="contact-card"><Phone size={18}/><span><b>902250433</b><small>Call the mandal</small></span></a>
+                <a href="tel:+919022500433" className="contact-card"><Phone size={18}/><span><b>9022500433</b><small>Call the mandal</small></span></a>
                 <div className="contact-card"><MapPin size={18}/><span><b>Mandwa, Chandur Rly, Amravati</b><small>Mandal location</small></span></div>
                 <div className="contact-card"><Clock3 size={18}/><span><b>09:00 AM – 10:00 PM</b><small>Festival help desk</small></span></div>
               </div>
